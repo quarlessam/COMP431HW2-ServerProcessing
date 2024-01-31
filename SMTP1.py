@@ -102,7 +102,7 @@ def path(x):
     y = re.split(r'^<', y)[1]
     y = mailbox(y)
     if not re.compile('^>').match(y):
-        raise UserWarning("501")
+        raise UserWarning(501)
     y = re.split(r'^>', y)[1]
     return y
 
