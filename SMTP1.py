@@ -146,7 +146,7 @@ for line in sys.stdin:
     try: parse(line)
     except UserWarning as w:
         last_command = "DATA"
-        memory = ""
+        content = ""
         errorMsg = "Oops! This error message shouldn't be possible!"
         if w.args[0] == 500:
             errorMsg = "500 Syntax error: command unrecognized"
@@ -155,3 +155,5 @@ for line in sys.stdin:
         elif w.args[0] == 503:
             errorMsg = "503 Bad sequence of commands"
         print(errorMsg)
+if in_body:
+    print("501 Syntax error in parameters or arguments")
