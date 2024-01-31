@@ -69,11 +69,7 @@ def body(x):
     global recipients
     if re.compile('^\.$').match(x):
         in_body = 0
-        print("FILE OUTPUT:")
-        print(content)
-        print("WILL PRINT TO:")
         paths = recipients.split("\n")
-        print(paths)
         for path in paths:
             if path:
                 file_path = "forward/" + path
