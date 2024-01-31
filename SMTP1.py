@@ -5,10 +5,10 @@ import sys
 import re
 
 def parse(x):
+    print(x, end = "")
     if in_body:
         body(x)
     else:
-        print(x, end = "")
         if re.compile('^MAIL[ \t]+FROM:.*').match(x):
             if not last_command == "DATA":
                 raise UserWarning(503)
